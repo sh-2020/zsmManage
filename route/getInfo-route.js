@@ -6,13 +6,19 @@ const router = express.Router()
 
 router
 .get('/abilityInfo',(req,res)=>{
-    getInfo.getAbilityLimitsInfo(req.query,res)
+    getInfo.getAbilityLimitsInfo(req.query,res);
 })
 .get('/getUserList',(req,res)=>{
-    getInfo.getUserInfoList(req,res)
+    getInfo.getUserInfoList(req,res);
 })
 .get('/getUserInfoFromID',(req,res)=>{
-    getInfo.getUserInfoFromID(req,res)
+    getInfo.getUserInfoFromID(req,res);
+})
+.get('/updateItr',(req,res)=>{ 
+    getInfo.updateItr(req,res);
+})
+.post('/ModifyPwd',(req,res)=>{
+    getInfo.ModifyPwd(req,res);
 })
 
 module.exports = router

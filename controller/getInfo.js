@@ -51,12 +51,11 @@ const methods = {
         }
     },
     async getUserInfoFromID(req,res){
-        console.log(req.query)
         if(req.query.cid == ''){
             return;
         }
         try {
-            let selectResult = await gModel.getUseriInfo();
+            let selectResult = await gModel.getUseriInfo(req.query.cid);
             let status;
             if(selectResult.code == 0){
                 status = "no"
@@ -70,14 +69,36 @@ const methods = {
             })
             
         } catch (error) {
+            res.status = 500;
             res.json({
                 status:"err",
                 data:"服务器错误"
             })
             console.log(error);
             throw new Error(error)
+        }    
+    },
+    async updateItr(req,res){
+        try {
+            let changeResult = await gModel.updateItr({user_id:req.query.user_id,introduction:req.query.introduction});
+            res.json({
+                code:changeResult.code,
+                msg:changeResult.msg
+            })
+        } catch (error) {
+            console.log(error)
+        }  
+    },
+    async ModifyPwd(req,res){
+        try {
+            let ModifyRes = await gModel.ModifyPwd(req.body);
+            res.json({
+                code:ModifyRes.code,
+                msg:ModifyRes.msg
+            })
+        } catch (error) {
+            console.log(error)
         }
-        
     }
 }
 
