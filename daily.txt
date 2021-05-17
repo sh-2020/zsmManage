@@ -1,0 +1,33 @@
+ReferenceError: req is not defined
+    at /root/server/route/getInfo-route.js:15:26
+    at Layer.handle [as handle_request] (/root/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/root/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/root/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/root/server/node_modules/express/lib/router/layer.js:95:5)
+    at /root/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/root/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/root/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/root/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/root/server/node_modules/express/lib/router/index.js:47:12)   Sat May 15 2021 21:38:35 GMT+0800 (China Standard Time)
+ReferenceError: req is not defined
+    at /root/server/route/getInfo-route.js:15:26
+    at Layer.handle [as handle_request] (/root/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/root/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/root/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/root/server/node_modules/express/lib/router/layer.js:95:5)
+    at /root/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/root/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/root/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/root/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/root/server/node_modules/express/lib/router/index.js:47:12)   Sat May 15 2021 21:39:05 GMT+0800 (China Standard Time)
+TypeError: getInfo.getUseriInfo is not a function
+    at /root/server/route/getInfo-route.js:15:13
+    at Layer.handle [as handle_request] (/root/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/root/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/root/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/root/server/node_modules/express/lib/router/layer.js:95:5)
+    at /root/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/root/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/root/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/root/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/root/server/node_modules/express/lib/router/index.js:47:12)   Sat May 15 2021 21:39:49 GMT+0800 (China Standard Time)
