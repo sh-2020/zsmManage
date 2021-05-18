@@ -49,7 +49,7 @@ const methods = {
     getUserInfoListModel(data){
         return new Promise(async (resolve,reject)=>{
             let sql = `SELECT A.id,A.user_id,A.phone,A.username,A.nick_name,B.gender,B.avatarUrl,B.province,B.city,B.address 
-            FROM user_info AS B JOIN zsm_manage_user AS A ON A.user_id=B.user_id WHERE A.is_admin=0 AND A.id${data.type == 'true'?'>':'<'}${data.id} ORDER BY A.first_login_time ${data.type == 'true'?'':'DESC'} LIMIT 5 `
+            FROM user_info AS B JOIN zsm_manage_user AS A ON A.user_id=B.user_id WHERE A.is_admin=0 AND A.id${data.type == 'true'?'>':'<'}${data.id} AND A.state=0 ORDER BY A.first_login_time ${data.type == 'true'?'':'DESC'} LIMIT 5 `
             console.log(sql)
             try {
                 let queryResult = await query(sql)
@@ -148,6 +148,21 @@ const methods = {
                 let ModifyRes = await query(sql);
                 console.log(ModifyRes);
                 if(ModifyRes.affectedRows == 1){
+                    resolve({code:1,msg:'修改成功！'});
+                }
+            } catch (error) {
+                reject({code:0,msg:'服务器错误'})
+                console.log(error)
+            }
+        })
+    },
+    deleteUser(id){
+        return new Promise(async (resolve,reject)=>{
+            try {
+                let sql = `UPDATE zsm_manage_user SET zsm_manage_user.state='1' WHERE id =${id}`;
+                console.log(sql)
+                let DelRes = await query(sql);
+                if(DelRes.affectedRows == 1){
                     resolve({code:1,msg:'修改成功！'});
                 }
             } catch (error) {

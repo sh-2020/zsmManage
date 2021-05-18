@@ -20,5 +20,8 @@ router
 .post('/ModifyPwd',(req,res)=>{
     getInfo.ModifyPwd(req,res);
 })
+.get('/deleteUser',(req,res)=>{
+    getInfo.deleteUser(req,res);
+})
 
 module.exports = router

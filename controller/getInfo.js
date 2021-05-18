@@ -99,7 +99,19 @@ const methods = {
         } catch (error) {
             console.log(error)
         }
+    },
+    async deleteUser(req,res){
+        try {
+            let deleteRes = await gModel.deleteUser(req.query.id);
+            res.json({
+                code:deleteRes.code,
+                msg:deleteRes.msg
+            })
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
+
 
 module.exports = methods
